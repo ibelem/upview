@@ -10,13 +10,11 @@
     <div id="signed"></div>
     <script type="text/javascript">
         const show = () => {
-            const list = document.querySelector('#signed');
             const myRequest = new Request('./upview.json');
-
             fetch(myRequest)
             .then(response => response.json())
             .then(data => {
-                list.innerHTML(data.signed)
+                document.querySelector('#signed').innerHTML(data.signed)
             })
             .catch(console.error);
         }

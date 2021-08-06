@@ -16,16 +16,17 @@
             fetch(myRequest)
             .then(response => response.json())
             .then(data => {
-                let t = data.signed;
-                let g = t.split(",");
-                g = g.sort();
-                let u;
-                for(let i of g) {
-                    let q = i + "<br>"
-                    u += q
-                }
-                let n = g,length;
-                sg.innerHTML = `<h3>Signed: ${n}</h3>"<div>${u}</div>`
+                sg.innerHTML = data.signed;
+                // let t = data.signed;
+                // let g = t.split(",");
+                // g = g.sort();
+                // let u;
+                // for(let i of g) {
+                //     let q = i + "<br>"
+                //     u += q
+                // }
+                // let n = g,length;
+                // sg.innerHTML = `<h3>Signed: ${n}</h3>"<div>${u}</div>`
             })
             .catch(console.error);
         }

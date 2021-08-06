@@ -1,0 +1,25 @@
+{
+  "name": "upview",
+  "version": "1.0.0",
+  "main": "upview.js",
+  "scripts": {
+    "start": "node upview.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibelem/upview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibelem/upview/issues"
+  },
+  "homepage": "https://github.com/ibelem/upview#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "puppeteer": "^10.2.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

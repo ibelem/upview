@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   schedule:
-  - cron: '10 4-16/4 * * *'
+  - cron: '10 8,12,18 * * *'
 
 jobs:
   build:
@@ -17,6 +17,10 @@ jobs:
         node-version: [14.x]
 
     steps:
+    - name: set timezone
+      uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: "Asia/Singapore"
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2

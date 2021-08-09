@@ -113,7 +113,7 @@ const fs = require("fs");
   }
 
   let json = JSON.stringify(upview);
-  fs.writeFile('upview.json', json, 'utf8', function(err){
+  fs.writeFile('./src/upview.json', json, 'utf8', function(err){
     if(err) throw err;
   });
 

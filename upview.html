@@ -4,34 +4,130 @@
   <meta charset="utf-8">
   <title>UPVIEW+</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-  </style>
+  <link rel="stylesheet" type="text/css" href="./src/main.css"></link>
 </head>
 <body>
+    <div class="container">
+        <div class="clear-backend">
+        <input type="radio" class="tab-1" name="tab" checked="checked">
+        <span>Home</span><i class="fa fa-home"></i>
+        <input type="radio" class="tab-2" name="tab">
+        <span>48 49</span><i class="fa fa-medium"></i>
+        <input type="radio" class="tab-3" name="tab">
+        <span>68 69</span><i class="fa fa-user"></i>
+        <input type="radio" class="tab-4" name="tab">
+        <span>74 75</span><i class="fa fa-comment"></i>
+        <input type="radio" class="tab-5" name="tab">
+        <span>76 77</span><i class="fa fa-cloud-upload"></i>
+        <input type="radio" class="tab-6" name="tab">
+        <span>78 79</span><i class="fa fa-star"></i>
+        <input type="radio" class="tab-7" name="tab">
+        <span>80 81</span><i class="fa fa-photo"></i>
+        <input type="radio" class="tab-8" name="tab">
+        <span>3 4 5 12 13 14</span><i class="fa fa-line-chart"></i>
+        <input type="radio" class="tab-9" name="tab">
+        <span>27 28 29 39 40 41</span><i class="fa fa-link"></i>
+        <input type="radio" class="tab-10" name="tab">
+        <span>45 46 47</span><i class="fa fa-cog"></i>
+        
+        <div class="tab-content">
+        <section class="tab-item-1" id ="signed">
+            <div id="sgn"></div>
+            <div id="sgd"></div>
+        </section>
+        <section class="tab-item-2">
+            <table class="width: 100%" border="1">
+                <caption>UPVIEW</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">49号</th>
+                        <th colspan="2">48号</th>
+                    </tr>
+                </thead>
+                <tbody id="_4849">
+                </tbody>
+            </table> 
+        </section>
+        <section class="tab-item-3">
+            <table class="width: 100%" border="1">
+                <caption>UPVIEW</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">69号</th>
+                        <th colspan="2">68号</th>
+                    </tr>
+                </thead>
+                <tbody id="_6869">
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-item-4">
+            <table class="width: 100%" border="1">
+                <caption>UPVIEW</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">75号</th>
+                        <th colspan="2">74号</th>
+                    </tr>
+                </thead>
+                <tbody id="_7475">
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-item-5">
+            <table class="width: 100%" border="1">
+                <caption>UPVIEW</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">77号</th>
+                        <th colspan="2">76号</th>
+                    </tr>
+                </thead>
+                <tbody id="_7677">
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-item-6">
+            <table class="width: 100%" border="1">
+                <caption>UPVIEW</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">79号</th>
+                        <th colspan="2">78号</th>
+                    </tr>
+                </thead>
+                <tbody id="_7879">
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-item-7">
+            <table class="width: 100%" border="1">
+                <caption>UPVIEW</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">81号</th>
+                        <th colspan="2">80号</th>
+                    </tr>
+                </thead>
+                <tbody id="_8081">
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-item-8">
+        <h1>Eight</h1>
+        </section>
+        <section class="tab-item-9">
+        <h1>Nine</h1>
+        </section>
+        <section class="tab-item-10">
+        <h1>Ten</h1>
+        </section>
+        </div>
+        </div>
+        </div>
+      
     <div id="signed"></div>
-    <script type="text/javascript">
-        const show = () => {
-            const sg = document.querySelector('#signed');
-            const myRequest = new Request('./upview.json');
-
-            fetch(myRequest)
-            .then(response => response.json())
-            .then(data => {
-                sg.innerHTML = data.signed;
-                // let t = data.signed;
-                // let g = t.split(",");
-                // g = g.sort();
-                // let u;
-                // for(let i of g) {
-                //     let q = i + "<br>"
-                //     u += q
-                // }
-                // let n = g,length;
-                // sg.innerHTML = `<h3>Signed: ${n}</h3>"<div>${u}</div>`
-            })
-            .catch(console.error);
-        }
-        document.addEventListener("DOMContentLoaded", show, false);
-    </script>
+    <script type="text/javascript" src="./src/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./src/ui.js"></script>
 </body>
 </html>

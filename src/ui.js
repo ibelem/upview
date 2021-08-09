@@ -21,7 +21,7 @@ const show = () => {
             i = i.replace('(复式)', '')
             $("#"+i).addClass("signed");
             let t = $("#"+i).html();
-            $("#"+i).html(t + "已网签");
+            $("#"+i).html(t);
         }
         sgd.innerHTML = "<h3>已网签</h3>" + u
     })
@@ -56,6 +56,12 @@ const insertTable = (unit1, unit2, tbodyid) => {
     $("#"+tbodyid).html(html)
 }
 
+const showFSTable = (tbodyid) => {
+    $("#"+tbodyid + ' td').each(function( index ) {
+        $(this).html($(this).attr('id'))
+    })
+}
+
 $(document).ready(function () {
     insertTable("49", "48", "_4849")
     insertTable("69", "68", "_6869")
@@ -64,6 +70,10 @@ $(document).ready(function () {
     insertTable("75", "74", "_7475")
     insertTable("79", "78", "_7879")
     insertTable("81", "80", "_8081")
-    
+    showFSTable("_345")
+    showFSTable("_121314")
+    showFSTable("_272829")
+    showFSTable("_394041")
+    showFSTable("_454647")
     show();
 })

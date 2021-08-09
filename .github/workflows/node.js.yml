@@ -7,7 +7,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-  - cron: '10 0,2,12 * * *'
+  - cron: '5 6,8,18 * * *'
 
 jobs:
   build:
@@ -19,10 +19,6 @@ jobs:
         node-version: [14.x]
 
     steps:
-    - name: set timezone
-      uses: szenius/set-timezone@v1.0
-      with:
-        timezoneLinux: "Asia/Singapore"
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2

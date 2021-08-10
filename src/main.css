@@ -17,6 +17,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+canvas {
+	max-height: 50vh;
+}
+
 h3 {
 	margin: 0; 
 }
@@ -35,7 +39,8 @@ caption {
 }
 
 #signed div h3 {
-	margin-bottom: 1rem;
+	margin: 1rem auto;
+	font-size: 1rem; 
 }
 
 #signed span {

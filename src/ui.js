@@ -4,8 +4,9 @@ const show = () => {
     const myRequest = new Request('./src/upview.json');
     const myRequest2 = new Request('./src/upview2.json');
     let signumber = ''
-    let sig = ''
     let totalsigned = 0
+    let datenumber = []
+    let datelabels = []
 
     fetch(myRequest)
     .then(response => response.json())
@@ -33,14 +34,16 @@ const show = () => {
     fetch(myRequest2)
     .then(response => response.json())
     .then(data => {
-        let daily = data.daily
-        for(var d in daily) {
-            let dd = daily[d]
-            let ddd = dd.date + ': ' + dd.number + '<br>';
-            signumber += ddd;
-        }
-        signumber = `<h3>每日网签数:</h3>` + signumber
-        sgn.innerHTML = signumber
+        // daily = data.daily
+        datenumber = data.date
+        datelabels = data.labels
+        // for(var d in daily) {
+        //     let dd = daily[d]
+        //     let ddd = dd.date + ': ' + dd.number + '<br>';
+        //     signumber += ddd;
+        // }
+        // signumber = `<h3>每日网签数:</h3>` + signumber
+        // sgn.innerHTML = signumber
 
         $("#total").html(data.total)
         $("#b1").html(data.b1)
@@ -49,8 +52,32 @@ const show = () => {
         $("#notsed").html(notsed)
         let sedp = parseInt(totalsigned)*100/parseInt(data.total)
         $("#sedp").html(sedp.toFixed(1) + '%')
+
+        var ctx = document.querySelector('#chart').getContext('2d');
+        let chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: datelabels,
+                datasets: [{
+                    label: '每日网签数',
+                    data: datenumber,
+                    fill: false,
+                    borderColor: '#ED2553',
+                    tension: 0.1
+                }]
+            },        
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     })
     .catch(console.error);
+
+    
 }
 
 const insertTable = (unit1, unit2, tbodyid) => {

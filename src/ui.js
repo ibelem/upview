@@ -5,6 +5,7 @@ const show = () => {
     const myRequest2 = new Request('./src/upview2.json');
     let signumber = ''
     let sig = ''
+    let totalsigned = 0
 
     fetch(myRequest)
     .then(response => response.json())
@@ -24,6 +25,8 @@ const show = () => {
             $("#"+i).html(t);
         }
         sgd.innerHTML = "<h3>已网签</h3>" + u
+        totalsigned = g.length
+        $("#sed").html(g.length)
     })
     .catch(console.error);
 
@@ -38,6 +41,14 @@ const show = () => {
         }
         signumber = `<h3>每日网签数:</h3>` + signumber
         sgn.innerHTML = signumber
+
+        $("#total").html(data.total)
+        $("#b1").html(data.b1)
+        $("#b2").html(data.b2)
+        let notsed = parseInt(data.total) - parseInt(totalsigned)
+        $("#notsed").html(notsed)
+        let sedp = parseInt(totalsigned)*100/parseInt(data.total)
+        $("#sedp").html(sedp.toFixed(1) + '%')
     })
     .catch(console.error);
 }

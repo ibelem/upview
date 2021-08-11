@@ -84,10 +84,10 @@ const insertTable = (unit1, unit2, tbodyid) => {
     let row, html = '';
     for(let t = 18; t>0; t--) {
         row = `<tr>
-                <td id="${unit2}-${t}02">${unit2}-${t}02</td>
-                <td id="${unit2}-${t}01">${unit2}-${t}01</td>
                 <td id="${unit1}-${t}02">${unit1}-${t}02</td>
                 <td id="${unit1}-${t}01">${unit1}-${t}01</td>
+                <td id="${unit2}-${t}02">${unit2}-${t}02</td>
+                <td id="${unit2}-${t}01">${unit2}-${t}01</td>
             </tr>`
         html += row;
     }

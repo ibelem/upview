@@ -104,7 +104,7 @@ $(document).ready(function () {
     insertTable("49", "48", "_4849")
     insertTable("69", "68", "_6869")
     insertTable("75", "74", "_7475")
-    insertTable("76", "77", "_7677")
+    insertTable("77", "76", "_7677")
     insertTable("79", "78", "_7879")
     insertTable("81", "80", "_8081")
     showFSTable("_345")

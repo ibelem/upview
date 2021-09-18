@@ -41,9 +41,12 @@ const show = () => {
             $("#"+i).html(t);
         }
 
-        sgd.innerHTML = "<br><h3 class='registered'>已在交易中心预告登记</h3><div>随申办市民云'我的不动产'可查询。预告登记的前提是开发商已把房子的抵押从银行解押，这时房子是干净的，归到你名下，才能办购房贷款，银行再把你的当押金，给你放款。</div>" + u2 + "<h3 class='signed'>已网签 / 已签完预售合同</h3><div>只跟开发商签合同没做预告登记的会存在风险，虽然合同签了，在法律上这个房子还是归开发商所有，房子还是被开发商抵押给银行了。</div>" + u;
+        sgd.innerHTML = "<br><h3 class='registered'>已在交易中心预告登记</h3><div>预告登记具有物权效力。制约开发商把已出售的住房再次出售或者进行抵押。随申办市民云'我的不动产'可查询。预告登记的前提是开发商已把房子的抵押从银行解押，这时房子是干净的，归到你名下，才能办购房贷款，银行再把你的当押金，给你放款。</div>" + u2 + "<h3 class='signed'>已网签 / 已签完预售合同</h3><div>网签、备案不具物权效力。只跟开发商签合同没做预告登记的会存在风险，虽然合同签了，在法律上这个房子还是归开发商所有，房子还是被开发商抵押给银行了。</div>" + u;
         totalsigned = g.length + g2.length
         $("#sed").html(g.length + g2.length)
+        $("#red").html(g2.length)
+        let redp = parseInt(g2.length)*100/parseInt(g.length + g2.length)
+        $("#redp").html(redp.toFixed(1) + '%')
     })
     .catch(console.error);
 

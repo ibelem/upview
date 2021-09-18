@@ -45,7 +45,7 @@ const show = () => {
         totalsigned = g.length + g2.length
         $("#sed").html(g.length + g2.length)
         $("#red").html(g2.length)
-        let redp = parseInt(g2.length)*100/parseInt(g.length + g2.length)
+        let redp = parseInt(g2.length)*100/503
         $("#redp").html(redp.toFixed(1) + '%')
     })
     .catch(console.error);

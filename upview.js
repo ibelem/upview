@@ -88,7 +88,8 @@ const fs = require("fs");
   }
 
   var upview = {
-    signed: []
+    signed: [],
+    registered: []
   };
 
   for (u of uplist) {
@@ -116,16 +117,16 @@ const fs = require("fs");
     $("#moreInfo ._red_bg").each(function (index, ele) {
       let t = $(ele).text()
       t = t.trim();
-      let signed_room = bn + "-" + t
-      upview.signed.push(signed_room)
-      console.log(signed_room)
+      let registered_room = bn + "-" + t
+      upview.registered.push(registered_room)
+      console.log(registered_room)
     });
 
     await delay(5000);
   }
 
   let json = JSON.stringify(upview);
-  fs.writeFile('./src/upview.json', json, 'utf8', function(err){
+  fs.writeFile('./src/upview_v2.json', json, 'utf8', function(err){
     if(err) throw err;
   });
 

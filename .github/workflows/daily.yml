@@ -4,8 +4,6 @@
 name: count daily
 
 on:
-  push:
-    branches: [ main ]
   schedule:
   - cron: '0 22,23,0,1,2,4,10 * * *'
 
